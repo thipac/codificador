@@ -42,7 +42,7 @@
 
     function cesarEncode(arr, adicao){
         return arr.map((cifra)=>{
-            let code = cifra.charCodeAt();
+            let code = cifra.charCodeAt(0);
             if(code >= 65 && code <= 90){
                 return String.fromCharCode(((code - 65 + adicao) % 26) + 65)
             } else if(code >= 97 && code <= 122){
@@ -53,7 +53,7 @@
 
         function cesarDecode(arr, adicao){
             return arr.map((cifra)=>{
-                let code = cifra.charCodeAt();
+                let code = cifra.charCodeAt(0);
                 if(code >= 65 && code <= 90){
                     return (code-65-adicao < 0)?String.fromCharCode(((code - 65 - adicao + 26)%26)+65):String.fromCharCode(((code - 65 - adicao)%26)+65) 
                 } else if(code >= 97 && code <= 122){
