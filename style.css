@@ -67,7 +67,7 @@ select {
 	width: 100%;
 }
 
-.mostraCesar{
+#mostraCesar {
     display: none;
     margin: 20px;
     justify-content: center;

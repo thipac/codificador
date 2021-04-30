@@ -6,16 +6,17 @@
     var base64anula = document.getElementById('base64')
 
     opcao.addEventListener('change',()=>{
-        (opcao.value === 'base64')? base64() : cesar()  ; 
+        (opcao.value == 'base64')? base64() : cesar(); 
     });
-
+    
+    var cesar = ()=>{
+        mostra.style.display = "flex"
+    } 
     var base64 = ()=>{
         mostra.style.display = "none"
     }
 
-    var cesar = ()=>{
-        mostra.style.display = "flex"
-    } 
+    
         
     document.getElementById('entrada').addEventListener('keyup', (cifra)=>{
         let entrada = document.getElementById('entrada').value.split('');
@@ -47,7 +48,7 @@
             } else if(code >= 97 && code <= 122){
                 return String.fromCharCode(((code - 97 + adicao) % 26) + 97)
             } else return cifra
-        }).join('')
+        }).join(' ')
     }
 
         function cesarDecode(arr, adicao){
@@ -58,7 +59,7 @@
                 } else if(code >= 97 && code <= 122){
                     return String.fromCharCode(((code - 97 - adicao + 26) % 26) + 97)
                 } else return cifra
-            }).join('')  
+            }).join(' ')  
         }
 
             function base64Encode(entrada, decisao){
