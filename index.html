@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="logo">
+        <h1>Encode & <span>Decode</span></h1>
+    </header>
+    <main>
+        <div id="escolha">
+            <section id="escolha__decode">
+                    <select id="opcao">
+                        <optgroup>
+                        <option value disabled selected>Escolha o Decodificador</option>
+                        <option value="base64">Base 64</option>
+                        <option value="cesar">Cifra de Cesar</option>
+                        </optgroup>
+                    </select>
+                    <section class="container">
+                        <section class="choice__cod">
+                            <section>
+                            <h3>O que você deseja fazer?</h3>
+                            <label for="choice"><input type="radio" id="encode" value="encode" name="escolhi1" checked>Codificar</label> 
+                            <label for="choice2"><input type="radio" id="decode" value="decode" name="escolhi1">Descodificar</label>
+                            </section>
+                            
+                            <section id="mostraCesar ">
+                            <h3>Valor do incremento: </h3>
+                            <input type="number" value="0" id="adicao">    
+                            </section>
+                            
+                        </section>
+                    <section id="texto">
+                        <h3 class="title" >Escreva aqui a mensagem:</h3>
+                        <textarea id="entrada" cols="40" rows="07"></textarea>
+                        <h3 class="title">Resultado:</h3>
+                        <textarea id="saida" cols="40" rows="07" readonly></textarea>
+                    </section>
+                </section>
+            </section>
+        </div>
+    </main>
+    <script src="./codifica.js"></script>
+</body>
+</html>
