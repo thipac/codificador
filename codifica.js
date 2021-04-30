@@ -19,25 +19,26 @@
     
         
     document.getElementById('entrada').addEventListener('keyup', (cifra)=>{
+    
+    if(opcao.value == 'cesar' ){
         let entrada = document.getElementById('entrada').value.split('');
         let saida = document.getElementById('saida');
         let soma = parseInt(document.getElementById('adicao').value);
         let decisao = document.getElementById('encode').checked
-    
+
         if(decisao){
             saida.value = cesarEncode(entrada, soma);
-        } else {
-            saida.value = cesarDecode(entrada, soma)
+        } else{
+            saida.value = cesarDecode(entrada, soma)        
         }
-           
-    })
-
-    document.getElementById('entrada').addEventListener('keyup', (cifra)=>{
-        let entrada = document.getElementById('entrada').value
-        let saida = document.getElementById('saida');
-        let decisao = document.getElementById('encode').checked
+    }
+        if(opcao.value == 'base64'){
+            let entrada = document.getElementById('entrada').value
+            let saida = document.getElementById('saida');
+            let decisao = document.getElementById('encode').checked
         
-        saida.value = base64Encode(entrada, decisao)
+            saida.value = base64Encode(entrada, decisao)  
+        }   
     })
 
     function cesarEncode(arr, adicao){
@@ -48,7 +49,7 @@
             } else if(code >= 97 && code <= 122){
                 return String.fromCharCode(((code - 97 + adicao) % 26) + 97)
             } else return cifra
-        }).join(' ')
+        }).join('')
     }
 
         function cesarDecode(arr, adicao){
@@ -59,7 +60,7 @@
                 } else if(code >= 97 && code <= 122){
                     return String.fromCharCode(((code - 97 - adicao + 26) % 26) + 97)
                 } else return cifra
-            }).join(' ')  
+            }).join('')  
         }
 
             function base64Encode(entrada, decisao){
